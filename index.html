@@ -1,0 +1,441 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Luca Brusatin</title>
+  <meta charset="utf-8" />
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  /*Main*/
+  *{margin:0;font-family:'Open Sans',sans-serif;font-weight:400}
+  strong{font-weight:600}
+  body{background-color:#f5f9fa;font-size:12pt;line-height:1.5em;color:#555}
+  h1,h2,h3,h4{color:#555;line-height:1.5em}
+  h1{font-size:2.5em;letter-spacing:-1.5px}
+  h2{font-size:2em;letter-spacing:-1px}
+  h3{font-size:1.5em;letter-spacing:-.5px}
+  h4{font-size:1em}
+  header{margin:0 0 1em}
+  a{text-decoration:none;color:#039;border-bottom:dotted 1px;-moz-transition:color .2s ease-in-out;-webkit-transition:color .2s ease-in-out;-ms-transition:color .2s ease-in-out;transition:color .2s ease-in-out}
+  a:hover{color:#06f}
+  p,ul,ol{margin-bottom:1em}
+  .container{margin:0 auto;max-width:1200px}
+  .image{display:inline-block;border:0;position:relative;margin:0 0 .5em}
+  .image img{display:block;width:100%}
+  .image.circle img{border-radius:50%}
+  .image.profile{-webkit-box-shadow:0 0 25px 5px #000;box-shadow:0 0 25px 5px #000;border-radius:300px;width:100%}
+  .image.right{float:right;margin:0 0 2em 2em}
+  .image.right.logo{width:150px}
+  .button{position:relative;display:inline-block;border-radius:.5em;border:none;color:#fff;padding:.8em 1em .8em 3.5em;margin:.25em;background-color:#369;cursor:pointer;-moz-transition:background-color .2s ease-in-out;-webkit-transition:background-color .2s ease-in-out;-ms-transition:background-color .2s ease-in-out;transition:background-color .2s ease-in-out}
+  .button:hover{color:#fff!important;background-color:#39c}
+  .button:active{color:#fff!important;background-color:#69c}
+  .button.resume{background-image:url(images/resume.png);background-size:contain;background-repeat:no-repeat}
+  .button.linkedin{background-image:url(images/lnkdin.png);background-size:contain;background-repeat:no-repeat}
+  .button.email{background-image:url(images/email.png);background-size:contain;background-repeat:no-repeat}
+  .button.github{background-image:url(images/git.png);background-size:contain;background-repeat:no-repeat}
+  .imagelist{width:100%;max-height:267px;overflow-x:auto;overflow-y:hidden;white-space:nowrap;box-shadow:0 10px 10px -10px rgba(0,0,0,0.4);text-align:center}
+  .imagelist image{margin:0 5px}
+  .skillset{text-align:left}
+  .skill{border-radius:.2em;color:#inherit;padding:.2em .5em;margin:0 .1em;white-space:nowrap;letter-spacing:-.5px;line-height:275%;background-color:rgba(0,0,0,0.05);border:1px solid #555;box-shadow:2px 2px 8px rgba(0,0,0,0.4);text-align:left}
+  .skill strong{color:#333}
+  .separator{border-left:1px solid #555;margin-left:5px;margin-right:8px}
+  #profile{position:relative;margin:1.75em 1.5em 1.5em;text-align:center}
+  #profile span.name{letter-spacing:-1.5px;color:#fff;font-size:1.5em;line-height:1em}
+  #profile span.subtitle{display:block;font-size:.8em;line-height:1.25em;margin:.5em 0 0}
+  #profile .image{position:relative;margin:0 0 .5em}
+  #lnks ul li{display:block;font-size:1em;text-decoration:none;padding:.5em 1.5em;outline:0;border:0;-moz-transition:none;-webkit-transition:none;-ms-transition:none;transition:none}
+  #lnks a{color:inherit;text-decoration:none;border-bottom-style:none;-moz-transition:color .2s ease-in-out;-webkit-transition:color .2s ease-in-out;-ms-transition:color .2s ease-in-out;transition:color .2s ease-in-out}
+  #lnks a:hover{color:#fff}
+  #page > section{margin:0;overflow:hidden;padding:1.5em 5em 2em;box-shadow:inset 0 .2em .4em rgba(0,0,0,0.12),inset 0 1px 0 rgba(0,0,0,0.2);text-align:left}
+  #page > section.darkbg{color:#fff;text-shadow:0 0 2px rgba(0,0,0,0.3),0 0 5px rgba(0,0,0,0.6)}
+  #page > section.darkbg h1,#page > section.darkbg h2,#page > section.darkbg h3{color:#fff}
+  #page > section.darkbg a{color:#fff}
+  #page > section.darkbg a:hover{color:#8be}
+  #page > section.banner:before{position:absolute;left:-20px;right:-20px;top:-20px;bottom:-20px;content:' ';z-index:-1;background-color:#369;background-image:url(images/banner.jpg);background-size:cover;background-position:center center;-webkit-filter:blur(10px);-moz-filter:blur(10px);-o-filter:blur(10px);-ms-filter:blur(10px);filter:blur(10px)}
+  #page > section.banner{position:relative;text-align:center;padding:1em 0}
+  #page > section:nth-of-type(even){background-color:#faf7f5}
+  @media screen and (max-width: 1000px) {
+    html,body{overflow-x:hidden;font-size:12pt}
+    body,input,textarea,select{font-size:12pt}
+    .item{margin-bottom:15px}
+    .image.fullpage{-webkit-box-shadow:0 0 25px 0 #000;box-shadow:0 0 25px 0 #000;border-radius:300px;width:50%;max-width:200px;display:inline-block}
+    .container{padding:0 2em}
+    ul.dots a{width:1.75em;font-size:1.25em}
+    #sidebar{display:none}
+    #profile{margin:1.5em 1.25em 1.25em}
+    #lnks ul li a{padding:.5em 1.25em}
+    #page{padding-bottom:1px;margin-left:0}
+    #page > section{padding:3em 0}
+    #page section.cover{padding:4em 0}
+  }
+  /*Timeline*/
+  .timeline{margin:0;padding:0;list-style:none;position:relative}
+  .timeline:before{content:'';position:absolute;top:0;bottom:0;width:10px;background:#369;left:105px;margin-left:-10px}
+  .timeline > li{position:relative}
+  .timeline > li .time{display:block;width:100px;position:absolute}
+  .timeline > li .time span{display:block;text-align:left}
+  .timeline > li .time span:nth-of-type(odd){font-size:1em;color:#555}
+  .timeline > li .time span:nth-of-type(even){font-size:1.5em;color:#555}
+  .timeline > li .label{margin:0 0 15px 140px;background:rgba(0,0,0,0.075);padding:2em;padding-top:1em;position:relative;border-radius:5px}
+  .timeline > li .label h3{margin-bottom:.5em;border-bottom:1px solid rgba(102,102,102,0.5);text-align:left}
+  .timeline > li .label .text{margin-top:1.5em;padding-bottom:1em;margin-bottom:0;min-height:60px;border-bottom:1px solid rgba(102,102,102,0.5)}
+  .timeline > li .label .text ul{margin-top:.5em;margin-bottom:.5em}
+  .timeline > li .label:after{right:100%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;border-right-color:rgba(0,0,0,0.075);border-width:10px;top:10px}
+  .timeline > li .dot{width:20px;height:20px;speak:none;font-style:normal;font-variant:normal;text-transform:none;font-size:1.4em;line-height:40px;position:absolute;color:#fff;background:#369;border-radius:50%;box-shadow:0 0 0 8px #afdcf8;text-align:center;left:105px;top:0;margin:12px 0 0 -15px}
+  @media screen and (max-width: 1000px) {
+    .timeline > li .time span:last-child{font-size:1.25em}
+    .timeline:before{display:none}
+    .timeline > li .label h2{font-size:1.5em}
+    .timeline > li .time{width:100%;position:relative;padding:0 0 20px}
+    .timeline > li .time span{text-align:left}
+    .timeline > li .label{margin:0 0 30px;padding:1em;font-size:95%}
+    .timeline > li .label:after{right:auto;left:20px;border-right-color:transparent;border-bottom-color:#ebebeb;top:-20px}
+    .timeline > li .dot{position:relative;float:right;left:auto;margin:-55px 5px 0 0;visibility:hidden}
+  }
+  /*Fonts*/
+  @font-face {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-style: normal;
+    src: url('fonts/Open-Sans-regular/Open-Sans-regular.eot');
+    src: url('fonts/Open-Sans-regular/Open-Sans-regular.eot?#iefix') format('embedded-opentype'),
+         local('pOen Sans'),
+         local('Open-Sans-regular'),
+         url('fonts/Open-Sans-regular/Open-Sans-regular.woff2') format('woff2'),
+         url('fonts/Open-Sans-regular/Open-Sans-regular.woff') format('woff'),
+         url('fonts/Open-Sans-regular/Open-Sans-regular.ttf') format('truetype'),
+         url('fonts/Open-Sans-regular/Open-Sans-regular.svg#OpenSans') format('svg');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-style: normal;
+    src: url('fonts/Open-Sans-600/Open-Sans-600.eot');
+    src: url('fonts/Open-Sans-600/Open-Sans-600.eot?#iefix') format('embedded-opentype'),
+         local('Open Sans Semibold'),
+         local('Open-Sans-600'),
+         url('fonts/Open-Sans-600/Open-Sans-600.woff2') format('woff2'),
+         url('fonts/Open-Sans-600/Open-Sans-600.woff') format('woff'),
+         url('fonts/Open-Sans-600/Open-Sans-600.ttf') format('truetype'),
+         url('fonts/Open-Sans-600/Open-Sans-600.svg#OpenSans') format('svg');
+  }
+  </style>
+</head>
+<body>
+  <div id="page">
+    <section id="top" class="banner darkbg">
+      <div class="container">
+        <header>
+          <span class="image circle fullpage"><img src="images/profile.jpg" alt=""/></span>
+          <h2><strong>Luca Brusatin</strong></h2>
+          <p>Automotive Software @ NVIDIA</p>
+        </header>
+        <footer>
+          <a href="mailto:mail@lucabrusatin.com" class="button email">Get in touch by email</a>
+          <a href="resume.pdf" class="button resume">Resume/CV</a>
+          <a href="https://linkedin.com/in/lucabrusatin" class="button linkedin">View my LinkedIn profile</a>
+        </footer>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <header>
+          <h2>Experience</h2>
+        </header>
+        <ul class="timeline">
+          <li>
+            <time class="time" datetime="present">
+              <span></span><span>Present </span> &uarr;
+              <span>July</span><span>2017</span>
+            </time>
+            <div class="dot"></div>
+            <div class="label">
+              <h3>Senior System Software Engineer - NVIDIA</h3>
+              <div class="text">
+                Developing software and algorithms for autonomous vehicles as a member of the 
+                <a href="https://developer.nvidia.com/driveworks">NVIDIA DriveWorks SDK</a> team.
+                Bayesian filtering for vehicle state and trajectory estimation.
+              </div>
+            </div>
+          </li>
+          <li>
+            <time class="time" datetime="present">
+              <span>February</span><span>2017</span> &uarr;
+              <span>December</span><span>2015</span>
+            </time>
+            <div class="dot"></div>
+            <div class="label">
+              <h3>Associate robotics programmer - Human Robot Interaction Laboratory</h3>
+              <div class="text">
+                Worked at Tufts' <a href="http://hrilab.org">Human-Robot Interaction Laboratory</a>,
+                where I wrote software for various robotic platforms. Developed computer vision software for human-robot interaction tasks.
+                Worked on the lab's robotic middleware. Developed a norm-aware task manager supporting the planning and execution of 
+                concurrent actions in a multi-agent setting.
+              </div>
+            </div>
+          </li>
+          <li>
+            <time class="time" datetime="2015-01">
+              <span>January</span><span>2015</span> &uarr;
+              <span>August</span><span>2014</span>
+            </time>
+            <div class="dot"></div>
+            <div class="label">
+              <h3>Embedded Software Engineer (Intern) - senseFly</h3>
+              <div class="text">
+                Worked on <a href="http://sensefly.com">senseFly</a>'s
+                Albris quadcopter. Developed the code stabilizing the camera gimbal,
+                a key feature of this product, which was presented at different technology and GIS shows
+                such as Intergeo 2014 and CES 2015.
+                Implemented a low-level fallback autopilot, a critical safety feature for UAVs.
+                Wrote drivers interfacing with the sensors required for these control tasks.
+                <a href="#sensefly">See related project.</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <header>
+          <h2>Education</h2>
+        </header>
+        <ul class="timeline">
+          <li>
+            <time class="time" datetime="2015-09">
+              <span>September</span><span>2015</span> &uarr;
+              <span>September</span><span>2013</span>
+            </time>
+            <div class="dot"></div>
+            <div class="label">
+              <h3>M.Sc. Microengineering (Robotics and Autonomous Systems) - EPFL</h3>
+              <div class="text">
+                <p>Ecole Polytechnique Fédérale de Lausanne, Switzerland.</p>
+                Relevant coursework:<ul>
+                <li>Machine Learning</li>
+                <li>Image Processing</li>
+                <li>Distributed Intelligent Systems</li>
+                <li>Bio-inpired Artificial Intelligence</li>
+                <li>Robotics, Mobile Robotics</li>
+                <li>System Identification</li>
+                <li>Space mission design and operations</li>
+              </ul>
+                <br/>
+                Notable projects:
+                <ul>
+                  <li><a href="#disal">Object Detection, Tracking and Classification using LiDAR Data</a></li>
+                  <li><a href="#la">High Speed Laser-based Positioning System</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <time class="time" datetime="2015-08">
+              <span>August</span><span>2015</span> &uarr;
+              <span>February</span><span>2015</span>
+            </time>
+            <div class="dot"></div>
+            <div class="label">
+              <h3>Visiting Graduate Student - Harvard University</h3>
+              <div class="text">
+                <p>Self-Organizing Systems Research Group, SEAS, Harvard University.</p>
+                <p>Master's Thesis on dispersion algorithms for swarm robots at Radhika Nagpal's
+                  <a href="http://www.eecs.harvard.edu/ssr/">Self-Organizing Systems Research Group</a>.
+                  For more details see the <a href="#swarm">project description</a>.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <time class="time" datetime="2013-07">
+              <span>July</span><span>2013</span> &uarr;
+              <span>September</span><span>2010</span>
+            </time>
+            <div class="dot"></div>
+            <div class="label">
+              <h3>B.Sc. Microengineering (Mechatronics, Robotics and Automation Engineering) - EPFL</h3>
+              <div class="text">
+                <p>Ecole Polytechnique Fédérale de Lausanne, Switzerland.</p>
+                Relevant coursework:
+                <ul>
+                  <li>Analysis, Numerical Analysis, Linear Algebra, Probability and Statistics</li>
+                  <li>Control Systems</li>
+                  <li>Signal Processing</li>
+                  <li>Optical Engineering</li>
+                  <li>Electronic circuits and systems</li>
+                  <li>Semiconductor Devices</li>
+                  <li>Microstructure Fabrication Technologies & Clean Room Practicals</li>
+                </ul>
+
+                Notable projects:
+                <ul>
+                  <li>Mechanical design of a delta robot</li>
+                  <li>Space Invaders in assembly language</li>
+                  <li>Product development of a consumer quadcopter for aerial photography and video</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <header>
+          <h2>Projects</h2>
+        </header>
+        <ul class="timeline">
+          <li>
+            <a name="swarm"></a>
+            <time class="time" datetime="2015-08"><span>August</span><span>2015</span>&uarr;
+              <span>February</span> <span>2015</span></time>
+            <div class="dot"></div>
+            <div class="label">
+              <h3>Dispersion Algorithms on a Thousand Robot Swarm</h3>
+              <div class="imagelist">
+                <img src="images/kilobots/table.jpg">
+              </div>
+              <div class="text">
+                In swarm robotics, large groups of robots are used to achieve complex tasks that
+                are out of reach of the individual robot by leveraging the power of the collective.
+                The distributedness and robustness of these multi-robot systems makes them very suitable
+                for applications such as distributed search, sensing, mapping and surveillance.
+                An active area of research in the field is understanding how the interactions between
+                individuals affect the global behavior of the swarm. The aim of this work is to study
+                how a basic behavior, dispersion, can be implemented on a thousand robot swarm consisting
+                of very simple robots (“kilobots”), with limited knowledge about themselves and the
+                environment, and imperfect sensing, communication and locomotion. Many dispersion algorithms
+                have been presented in the literature, but few are actually simple enough to run on the
+                kilobots and many have not been thoroughly tested on real hardware. Various algorithms are 
+                implemented and their performance is evaluated through systematic experiments in order to get an
+                understanding of the emergent behaviors, error patterns, robustness and scalability.
+              </div>
+              <span class="skill">Robotics</span>
+              <span class="skill">Algorithms</span>
+              <span class="skill">Computer Vision</span>
+              <span class="skill">C</span>
+              <span class="skill">Matlab</span>
+            </div>
+          </li>
+          <li>
+            <a name="sensefly"></a>
+            <time class="time" datetime="2015-01">
+              <span>January</span><span>2015</span> &uarr;
+              <span>August</span><span>2014</span>
+            </time>
+            <div class="dot"></div>
+            <div class="label">
+              <h3>Embedded software development - senseFly</h3>
+              <div class="imagelist">
+                <img src="images/sensefly/im1.jpg">
+                <img src="images/sensefly/im2.jpg">
+              </div>
+              <div class="text">
+                The Albris quadcopter is senseFly's mapping and inspection drone targeted towards professionals.
+                I developped the camera gimbal stabilization and safety fallback flight controller, along with the drivers
+                interfacing with the sensors required for these control tasks.
+              </div>
+              <span class="skill">Robotics</span>
+              <span class="skill">Embedded Systems</span>
+              <span class="skill">C</span>
+            </div>
+          </li>
+          <li>
+            <a name="disal"></a>
+            <time class="time" datetime="2014-06"><span>June</span><span>2014</span>&uarr;
+              <span>February</span> <span>2014</span></time>
+            <div class="dot"></div>
+            <div class="label">
+              <h3>Object Detection, Tracking and Classification using LiDAR Data</h3>
+              <div class="imagelist">
+                <img src="images/datmo/im1.jpg">
+                <img src="images/datmo/im2.jpg">
+              </div>
+              <div class="text">
+                Laser range-finders are commonly used on intelligent vehicles for the
+                observation of the surroundings. The detection and tracking of moving objects (DATMO),
+                including classification, provides crucial data for advanced features such as collision
+                prediction or trajectory planning systems in road environments. In this project I developped
+                a tool capable of detecting, tracking and classifying objects using range data obtained
+                from automotive laser range-finders. The software tool works in real time, with simulated
+                and real world range data, and interfaces with other ROS components.
+              </div>
+              <span class="skill">Robotics</span>
+              <span class="skill">ROS</span>
+              <span class="skill">C++</span>
+            </div>
+          </li>
+          <li>
+            <a name="la"></a>
+            <time class="time" datetime="2014-01">
+              <span>January</span><span>2014</span> &uarr;
+              <span>September</span><span>2013</span>
+            </time>
+            <div class="dot"></div>
+            <div class="label">
+              <h3>High Speed Laser-based Positioning System</h3>
+              <div class="imagelist">
+                <img src="images/laser-position/im1.jpg">
+                <img src="images/laser-position/im2.jpg">
+                <img src="images/laser-position/im3.jpg">
+                <img src="images/laser-position/im4.jpg">
+              </div>
+
+              <div class="text">
+                The Automatic Control Laboratory’s foosball table has been equipped
+                with a robotic “arm” that controls one bar. To block shots from
+                the opponents, the robot needs to react quickly. Existing positioning 
+                systems did not fulfill the requirements, thus I conceived from scratch 
+                a specialized high-speed laser positioning system, with millimeter scale 
+                precision at up to 500Hz refresh rate.
+              </div>
+              <span class="skill">Electronics (Analog/Digital)</span>
+              <span class="skill">Solidworks</span>
+              <span class="skill">Altium Designer</span>
+              <span class="skill">C</span>
+              <span class="skill">ARM</span>
+              <span class="skill">MATLAB/LabVIEW</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <header>
+          <h2>Skills</h2>
+        </header>
+        <div class="skillset">
+          <span class="skill">Software Development</span>
+          <span class="skill">Embedded Systems</span>
+          <span class="skill">Linux</span>
+          <br/>
+          <span class="skill">Robotics</span>
+          <span class="skill">Image Processing</span>
+          <span class="skill">Computer Vision</span>
+          <span class="skill">Mechatronics</span>
+          <span class="skill">Electronics</span>
+          <br/>
+          <span class="skill">C</span>
+          <span class="skill">C++</span>
+          <span class="skill">Python</span>
+          <span class="skill">Java</span>
+          <br/>
+          <span class="skill">Solidworks</span>
+          <span class="skill">Eagle</span>
+          <br/>
+
+          <span class="skill">English</span><span class="skill">French</span>
+          <span class="skill">Swiss German</span><span class="skill">German</span> <br/>
+          <div style="text-align:right">... and more soon!</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
